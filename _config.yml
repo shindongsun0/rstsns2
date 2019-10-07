@@ -1,0 +1,5 @@
+  
+deploy:
+  type: git
+  repo: https://github.com/shindongsun0/rstsns2
+  branch: master

@@ -1,0 +1,27 @@
+sudo: required
+language: node_js
+node_js:
+  - 11.6.0
+services: 
+- docker
+env:
+  global:
+  - DOCKER_REPO=sds111888/rstsns
+  - DOCKER_USER=$DOCKER_ID
+  - DOCKER_PASS=$DOCKER_PASSWORD
+before_install:
+  - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+script:
+  - docker build -t rstsns . 
+deploy:
+ provider: script
+ script: bash docker-deploy.sh
+ on: 
+   branch: master
+cache: npm
+install:
+  - npm install
+before_script:
+  - git config --global user.name shindongsun0
+  - git config --global user.email shindongsun0@naver.com
+  - sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml

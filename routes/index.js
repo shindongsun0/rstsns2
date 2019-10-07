@@ -175,7 +175,7 @@ passport.deserializeUser(function(obj, done) {
 
 passport.use(new GoogleStrategy({
 		clientID: "552397692687-l6pc4imr0pginkf7vkmkh448fks4bhbc.apps.googleusercontent.com",
-		clientSecret: "O52UwpHv5RTR7q6ducfT-FP-",
+		clientSecret: "SeuJh23He0Xmo-hWBzwrFzxv",
 		callbackURL: "/auth/google/callback"
 	}, 
 	function(accessToken, refreshToken, profile, done) {
