@@ -7,5 +7,5 @@ ADD . /app
 ADD app.js /app.js
 RUN npm install
 ENV NODE_ENV development
-EXPOSE 3000 80
+EXPOSE 9000 80
 CMD ["npm","start"]
