@@ -1,11 +1,15 @@
 FROM node:7
-MAINTAINER Daeun Shim <10ekdms01@naver.com>
 
-RUN mkdir -p /app
-WORKDIR /app
-ADD . /app
-ADD app.js /app.js
+RUN mkdir -p /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY package.json .
+
 RUN npm install
-ENV NODE_ENV development
-EXPOSE 9000 80
+
+COPY . .
+
+EXPOSE 9000
+
 CMD ["npm","start"]
