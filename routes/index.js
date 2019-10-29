@@ -23,7 +23,7 @@ var check_user = function(req){
 	var answer; 
 	
 	if(req.session.passport === undefined || req.session.passport.user === undefined){  // 비로그인유저일때
-		console.log('로그인이 필요함');
+		console.log('로그인이 필요함 ');
 		return false;
 	}
 	else{  // 로그인 되어 있을때
