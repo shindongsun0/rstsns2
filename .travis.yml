@@ -12,7 +12,7 @@ env:
 before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
 script:
-  - docker build -t rstsns . 
+  - docker build -t sds111888/docker-node-express-mongoapp . 
 deploy:
  provider: script
  script: bash docker-deploy.sh
