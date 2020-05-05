@@ -17,8 +17,6 @@ spec:                # 기대되는 obejct의 상태
         path: /
         port: 8080
 
---- # 주석 한개의 yaml파일에 여러개의 Object를 정의할 때 구분자로 사용한다.
-# Service Object 정의 - 다음 글에서 자세히 설명한다.
 apiVersion: v1
 kind: Service
 metadata:
